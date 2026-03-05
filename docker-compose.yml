@@ -1,0 +1,21 @@
+version: "3.9"
+
+services:
+  web:
+    build: .           #build image from Dockerfile in current folder
+    ports:
+      - "5000:5000"
+    environment:
+      - REDIS_HOST=redis
+    volumes:
+      - ./app:/app
+    depends_on:
+      - redis
+
+  redis:
+    image: redis:7
+    volumes:
+      - redis-data:/data   #Docker volume to store data even when container is stopped
+
+volumes:
+  redis-data:
