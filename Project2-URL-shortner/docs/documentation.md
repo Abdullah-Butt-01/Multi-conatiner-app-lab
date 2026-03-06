@@ -1,8 +1,8 @@
-# Project: Multi-Container App
+# Project: URL Shortener
 
 ## Objective
 
-* Create a multi-container app using flask and redis
+* Create a URL shortener using flask and redis
 
 ## Commands Practiced
 
@@ -14,27 +14,20 @@
 
 ## What I did
 
-* Created a flask app
-* Created Dockerfile, requirement.txt and docker-compose_file
-* Ran conatiners using docker compose
-* Containers ran automatically
-* Tested from host browser
-* Updated docker compose file for persistent redis data (in database)
-* Tested from browser
-* Stopped containers
-* Started again and tested from browser
-* The counter continued from previous state
+* Created flask app, requirements.txt, Dockerfile, and yml file
+* Ran the system using docker compose
+* Tested from the browser
+* Updated flask app to save list of all URLs
+* Updated yml file to store data on host, for permanent storage
+* Stopped and rebuit the system to test
+* All URLs showing in a list
 
 ## Problems Faced
 
-* Continuous error when using docker compose even after resetting docker
-* Docker not working (disabled)
-* Docker compose denied access of using image
+* Small mistake in Dockerfile
+* Flask app crashed, ran and immidiately stopped
 
 ## How I solved
 
-* Used isolated environment:
-	- curl -fsSL https://get.docker.com -o get-docker.sh
-	- sudo sh get-docker.sh
-* Started and enabled docker
-* Updated docker compose file to use Dockerfile for image
+* Corrected the Dockerfile
+* Updated flask app and added in the end
